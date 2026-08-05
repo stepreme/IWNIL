@@ -623,11 +623,6 @@
       "sha512": "65f803bae922c17f83e4227c1f811508044adf826fb1bfb09c78abb40c036424546356c502ea80083de527bb0ead4aeae7069d8b938d84ec518647fb0c69b313"
     },
     {
-      "path": "mods/bitsandbalance-neoforge-1.21.1-2.2.17.jar",
-      "url": "https://cdn.modrinth.com/data/77x98dqG/versions/1EQEbyKh/bitsandbalance-neoforge-1.21.1-2.2.17.jar",
-      "sha512": "e8d5e95601e414dbf581e2b97d454edf7e71cc786bcc0963322292c0c1ddf8fab17a4652318de39bf32c2ef21f27904967b4da3c5a2beebcf08fab4b35b9eac6"
-    },
-    {
       "path": "mods/blended-compat-1.1.2.jar",
       "url": "https://cdn.modrinth.com/data/QENxoXyf/versions/H9O3FEbB/blended-compat-1.1.2.jar",
       "sha512": "3f26c0a0c6da93c712b0c8b1d9381e6193029233c1abadb9e0eb393fb200149ae34f4eff8a286b64d1e19738c5b063c2ade91ae7b8167fce05fa9fd1016dcfd1"
