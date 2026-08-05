@@ -1,6 +1,6 @@
 {
   "name": "PackPulse Pack",
-  "version": "2026.08.02-200640",
+  "version": "2026.08.05-154719",
   "minecraftVersion": "1.21.1",
   "loader": "neoforge",
   "neoForgeVersion": "21.1.234",
@@ -8,9 +8,14 @@
   "profileName": "PackPulse Pack",
   "files": [
     {
+      "path": "config/defaultoptions/servers.dat",
+      "url": "https://raw.githubusercontent.com/stepreme/IWNIL/main/opt/packpulse/server-pack/config/defaultoptions/servers.dat",
+      "sha512": "95ae73137f4db87886e59ce341d6daaaed54e989e930935e8f07f444befa98adff3451c5fc30fb69c436b800739819026f8d9c238bb6ceabbcbfc0f60254b66e"
+    },
+    {
       "path": "mods/PackPulseMod-neoforge-1.21-1.0.1.jar",
       "url": "https://raw.githubusercontent.com/stepreme/IWNIL/main/opt/packpulse/server-pack/mods/PackPulseMod-neoforge-1.21-1.0.1.jar",
-      "sha512": "86886659e02d03667ad5e3c05271c97f27feb04c38e2c6d9de6bf896b26b9348e08e8bf086879d3ecf54abbe4a1a3b4cef4c5c6cabd976c8996a64718a4fd5db"
+      "sha512": "b7ec0b93d8aa99d1bbb8613125e6171df94f8e66c3421adef21be849f63e88efcdb41a1933c711aa56709d9308c4d6b3497540692e01eba898b9e149823d2e8a"
     },
     {
       "path": "mods/alexscaves-2.0.2.jar",
@@ -86,6 +91,16 @@
       "path": "mods/st_gsoc-1.21.1-3.0.jar",
       "url": "https://raw.githubusercontent.com/stepreme/IWNIL/main/opt/packpulse/server-pack/mods/st_gsoc-1.21.1-3.0.jar",
       "sha512": "7b7defc64d2487300431869d18895f6cf34fe50f273025084081c80144ec3477c0e12049d76ed37d7ebbec1f67e4305d67ab2253e1248b9317a2e00d329ecd80"
+    },
+    {
+      "path": "resourcepacks/Translate-for-IWNIL-1.zip",
+      "url": "https://raw.githubusercontent.com/stepreme/IWNIL/main/opt/packpulse/server-pack/resourcepacks/Translate-for-IWNIL-1.zip",
+      "sha512": "2021b78f2a09300d1d1fd537a74444394afe94b6347dc9507d841944b39df1882c8947761b180fc45c9639acbd66950f356c326ba269bf51ee463869ac395c91"
+    },
+    {
+      "path": "resourcepacks/Vintage.zip",
+      "url": "https://raw.githubusercontent.com/stepreme/IWNIL/main/opt/packpulse/server-pack/resourcepacks/Vintage.zip",
+      "sha512": "c3772b6480cc3abaa119d036f9c1e98981e6b2b30d0decc07dcdf7fee8ad09e8366beec186c3fa883f6a7fc1de81411c4e7a3a87a7fa60c0d2cc159db5d9673d"
     },
     {
       "path": "mods/enderscape-neoforge-2.1.0+mc1.21.1.jar",
@@ -1558,6 +1573,11 @@
       "sha512": "d2fa63ee3e813e6835ec5a2c749a65e0d58ed027a67ae610b93a67453e8eadf1bb3077696bf93529ee8b887115d6387cc9f923a5d94bb6ec39f229cc9fce5304"
     },
     {
+      "path": "mods/structurify-neoforge-2.0.30+mc1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/yz7AM2zx/versions/aV5lNYVM/structurify-neoforge-2.0.30%2Bmc1.21.1.jar",
+      "sha512": "5bf4abc2f777f47ec3ee846d861dcf743164475ff9d61790e99e8b515675f14b8cf613365b6e2a1e993f8032a06204ba490341daf2611de2fbbb834c87325130"
+    },
+    {
       "path": "mods/struts-1.3.0.jar",
       "url": "https://cdn.modrinth.com/data/sHO3MhQx/versions/Nrn7hYca/struts-1.3.0.jar",
       "sha512": "81837e97ebc081bd4afb0d456837e7b598f79c37b1d31874e7550d4a2f42f8c864587f9a04f44f14f175e9cf69884cd2e593fa1fb315727040affa1d69c2df06"
@@ -1791,11 +1811,6 @@
       "path": "resourcepacks/True Dovah.zip",
       "url": "https://cdn.modrinth.com/data/1ttTrrTr/versions/Gt5qv6bZ/True%20Dovah.zip",
       "sha512": "fa5e8cbcc5be8545884407ee36be200934230bc843f7231cef65ed6b7b445648f890a9890d00840c69940827ff9747fe3622a0827de6516cc5b71da30bf2ae09"
-    },
-    {
-      "path": "resourcepacks/Vintage.zip",
-      "url": "https://cdn.modrinth.com/data/9kOsrTdF/versions/7MTmrJ8h/Vintage.zip",
-      "sha512": "9fb8b1e3e0799a3759aeae1e38ecdbab348722d69cc6cf9ac630e45c8394824e44971d67ea6a4fc7ddf722ecaa961bfef8b69393b95e55bb8d9a0418f1bbf4a4"
     },
     {
       "path": "resourcepacks/cubic-sun-moon-v1.8.5.zip",

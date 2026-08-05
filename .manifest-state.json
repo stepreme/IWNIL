@@ -1,5 +1,6 @@
 {
   "knownPaths": [
+    "config/defaultoptions/servers.dat",
     "mods/AchievementOptimizer-neoforge-1.21.1-2.1.0.jar",
     "mods/AdvancementPlaques-1.21.1-neoforge-1.6.8.jar",
     "mods/AeroPropBlur-1.21.1-1.0a.jar",
@@ -309,6 +310,7 @@
     "mods/spelunkery-1.21.1-0.4.3-neoforge.jar",
     "mods/st_gsoc-1.21.1-3.0.jar",
     "mods/startuptime-1.0.0.jar",
+    "mods/structurify-neoforge-2.0.30+mc1.21.1.jar",
     "mods/struts-1.3.0.jar",
     "mods/supermartijn642configlib-1.1.8-neoforge-mc1.21.jar",
     "mods/supermartijn642corelib-1.1.22-neoforge-mc1.21.jar",
@@ -356,6 +358,7 @@
     "resourcepacks/Sharpened Textures.zip",
     "resourcepacks/Simple Create Radios V2.01.zip",
     "resourcepacks/Supplementaries Touch-Ups v0.2.zip",
+    "resourcepacks/Translate-for-IWNIL-1.zip",
     "resourcepacks/True Dovah.zip",
     "resourcepacks/Vintage.zip",
     "resourcepacks/cubic-sun-moon-v1.8.5.zip",
