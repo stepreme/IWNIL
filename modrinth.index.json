@@ -1551,21 +1551,6 @@
       "fileSize": 2768502
     },
     {
-      "path": "mods/bitsandbalance-neoforge-1.21.1-2.2.17.jar",
-      "hashes": {
-        "sha512": "e8d5e95601e414dbf581e2b97d454edf7e71cc786bcc0963322292c0c1ddf8fab17a4652318de39bf32c2ef21f27904967b4da3c5a2beebcf08fab4b35b9eac6",
-        "sha1": "9d629813e1825d0b536d817ed75edde423030304"
-      },
-      "env": {
-        "client": "required",
-        "server": "required"
-      },
-      "downloads": [
-        "https://cdn.modrinth.com/data/77x98dqG/versions/1EQEbyKh/bitsandbalance-neoforge-1.21.1-2.2.17.jar"
-      ],
-      "fileSize": 3859030
-    },
-    {
       "path": "mods/blended-compat-1.1.2.jar",
       "hashes": {
         "sha1": "98bbd93ec132f00cd70d6b65f4002bfda3b8d433",
@@ -2944,21 +2929,6 @@
         "https://cdn.modrinth.com/data/UFCtLrRv/versions/eRu4UNsh/hotstuff-1.1.6.jar"
       ],
       "fileSize": 227369
-    },
-    {
-      "path": "mods/ice_and_fire_spellbooks-2.3.3-1.21.1.jar",
-      "hashes": {
-        "sha1": "27e2828594e2c1140c65f682a72f8cadfb1f5a34",
-        "sha512": "1ef42e738282ec28e9c9d29ccdea4308cef78008a0bc08ea2c6f97c732401bd07a6eedca91faaf34bad3061b720415a9fc51eaa4b5ea82d1c0bb224eedf7030f"
-      },
-      "env": {
-        "client": "required",
-        "server": "required"
-      },
-      "downloads": [
-        "https://cdn.modrinth.com/data/aw5e7yPa/versions/YFXb3T9X/ice_and_fire_spellbooks-2.3.3-1.21.1.jar"
-      ],
-      "fileSize": 173108
     },
     {
       "path": "mods/iceandfire-2.0.jar",
