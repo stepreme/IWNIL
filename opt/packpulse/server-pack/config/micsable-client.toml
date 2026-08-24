@@ -1,0 +1,11 @@
+#Sable x Iris compatibility - keep Sable sub-levels (vehicles) from rendering black under shaders.
+[sable_iris]
+	#Under an Iris shaderpack, build a just-edited sub-level section on the async chunk-build worker
+	#thread instead of synchronously on the render thread. Sable builds player-edited sections
+	#synchronously for responsiveness, but on the render thread Iris may not widen the vertex format
+	#to its shader (52-byte) layout, so the section bakes in the old 32-byte format and the shader
+	#renders it solid black - the 'edit the vehicle and its blocks go black' bug. The async path is
+	#the same one every other section already uses and always bakes the correct format. Costs a frame
+	#or two of latency before an edit shows (the old mesh stays until then; no flash). No effect
+	#without a shaderpack. Turn off only to confirm this is the cause. Requires Iris.
+	buildEditedSubLevelsAsyncUnderShaders = true

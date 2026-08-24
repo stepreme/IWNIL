@@ -1,0 +1,19 @@
+#Sable render distance - let Sable sub-levels (vehicles/physics objects) render and stay loaded
+#far past the vanilla render distance, so they don't pop out at distance (e.g. with Voxy/LOD).
+#COMMON because keeping distant sub-levels loaded happens on the (integrated) server.
+[sable_render]
+	#How far away (in chunks) Sable sub-levels stay loaded and rendered. Higher values keep distant
+	#sub-levels simulating + force-load their host chunks, which costs performance the further out
+	#you go. Adjustable in-game from Sodium's video settings (Mod Options -> Make it Compatible: Voxy).
+	# Default: 32
+	# Range: 2 ~ 4096
+	renderDistanceChunks = 32
+	#Keep distant sub-levels (and their host chunks) loaded out to the render distance above. Required
+	#for sub-levels to actually render at distance - Sable otherwise unloads them at the server's
+	#chunk-ticking range (~the vanilla simulation distance), regardless of render distance.
+	keepSubLevelsLoaded = true
+	#Escape hatch: also push the whole camera's far clip plane out (vanilla GameRenderer projection).
+	#The per-sub-level far-plane fix already covers the normal Sodium render path, so this is OFF by
+	#default - it can desync Voxy's LOD terrain (Voxy reads the camera projection). Only enable if
+	#sub-levels still clip at distance on the non-Sodium renderer.
+	extendGlobalFarPlane = false

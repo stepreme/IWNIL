@@ -1,0 +1,168 @@
+#Voxy x Simple Clouds compatibility
+[voxy_simpleclouds]
+	#Match Simple Clouds' render distance to Voxy's render distance.
+	matchRenderDistance = true
+	#When matching is on, render clouds out to this percent of Voxy's render distance.
+	#100 = exactly Voxy's distance; 50 = half (clouds end well before the LOD horizon); 200 = double.
+	#Simple Clouds still clamps to its own cloud-area maximum, so very high values cap out there.
+	# Default: 100
+	# Range: 10 ~ 400
+	cloudRenderPercent = 100
+	#Hard cap on the matched cloud render distance, in blocks (applied AFTER the percent above).
+	#0 = no cap (let clouds follow Voxy all the way out). Voxy's LOD reaches very far (its default
+	#16 sections = 8192 blocks), and matching clouds that far means Simple Clouds meshes a huge cloud
+	#volume every frame. Lowering this trims the far cloud chunks for extra headroom. Try ~4096 if you
+	#want clouds far but not all the way to the LOD horizon.
+	# Default: 0
+	# Range: 0 ~ 16384
+	cloudRenderDistanceMaxBlocks = 0
+	#Render clouds behind Voxy's LOD terrain (force the depth-tested, draw-after-terrain pipeline
+	#so distant LOD terrain occludes the clouds).
+	cloudsBehindLodTerrain = true
+	#Under an Iris shaderpack, force Simple Clouds to render BEHIND Voxy's LOD terrain by writing the
+	#LOD depth into the buffer the clouds depth-test against. Without this, the cloud layer draws over
+	#distant LOD mountains. This is a 'behind LOD' fallback, not perfect depth: on shaderpacks that
+	#don't natively support Voxy (e.g. Complementary) the projection isn't a perfect match, so a cloud
+	#right in front of a near LOD hill can also be hidden. Turn off to let clouds draw over LOD instead.
+	#Requires Iris.
+	cloudsBehindLodWithShaders = true
+	#Fog the clouds over the CLOUD render distance instead of the terrain's. Simple Clouds fogs its
+	#clouds with the ordinary shader fog, which is tuned for terrain - and terrain fog is set to close
+	#at Voxy's LOD data edge, far nearer than the distance clouds are drawn over. Every cloud past that
+	#point is then clamped to fully fogged and the sky flattens into a sheet of fog colour. With this
+	#on, the fog is stretched to the cloud distance just for the cloud pass (same curve, same colour,
+	#just spread over the range the clouds actually occupy) and restored straight after, so terrain and
+	#sky are untouched. Only ever pushes the fog outward - if clouds already sit inside the terrain fog
+	#nothing changes.
+	cloudFogFollowsCloudDistance = true
+	#How far out the cloud fog closes, as a percent of the cloud render distance. 100 = a cloud on the
+	#far horizon is fully fogged, exactly as terrain is at the terrain horizon. Lower brings the fog in
+	#so distant clouds fade sooner; higher keeps far clouds clearer.
+	# Default: 100
+	# Range: 10 ~ 200
+	cloudFogPercent = 100
+
+#Voxy LOD transition smoothing
+[voxy_lod]
+	#Aligns Voxy's LOD-cull edge with where vanilla actually stops rendering, to remove the ring of
+	#missing chunks (void) at the render-distance edge. Voxy masks LOD by a chunk's NEAREST CORNER
+	#while Sodium renders by ~chunk CENTRE, a ~half-chunk (8-block) mismatch that leaves a void. This
+	#pulls Voxy's cull radius inward by this many blocks. ~8 is the sweet spot for most render
+	#distances: too low still shows the void; too high (~16+) makes LOD overlap INTO the vanilla edge
+	#and you see a border/seam (worst through water). Nudge by 2-4 if your render distance shows either.
+	#0 = off (Voxy default void).
+	# Default: 8
+	# Range: 0 ~ 256
+	lodEdgeOverlapBlocks = 8
+
+#Voxy x LittleTiles LOD
+[voxy_littletiles]
+	#Render LittleTiles blocks in Voxy's distant LOD terrain. Voxy bakes each LittleTiles block into
+	#the LOD as ONE FULL voxel of its biggest tile's material. Turn off to leave LittleTiles out of
+	#the LOD entirely (they still render normally inside the vanilla render distance). Applies as
+	#chunks are scanned into the LOD - already-baked LOD data only updates when its chunks are next
+	#loaded/changed.
+	renderInLod = true
+	#Only bake a LittleTiles block into the LOD if its tiles fill at least this percent of the block's
+	#volume. Because any included block becomes a FULL voxel at distance, sparse decorations (cables,
+	#trims, thin poles) otherwise bloat into solid blocks in the LOD. 0 = bake every LittleTiles block
+	#(Voxy's default behaviour); ~10-25 keeps substantial builds while dropping thin decor; 100 = only
+	#completely filled blocks.
+	# Default: 0
+	# Range: 0 ~ 100
+	minFillPercent = 0
+
+#Voxy x Big Water compatibility
+[voxy_bigwater]
+	#Bake Voxy's LOD fluids at Big Water's texture scale, so water doesn't change texture where the
+	#LOD takes over. Big Water spreads one fluid texture across an NxN block area, but it only does
+	#that inside Sodium's chunk mesher. Voxy bakes its LOD models through vanilla's fluid renderer
+	#instead, which Big Water never touches - so the LOD keeps vanilla's one-texture-per-block mapping
+	#and distant water carries N times finer detail than the water in front of it, right at the seam
+	#where it shows most. With this on, the bake uses Big Water's sprite and scale as well.
+	#A LOD model is baked per BLOCK STATE, so it gets one fixed slice of the texture (the one Big Water
+	#draws at world 0,0) rather than the NxN variation the near chunks have - the scale matches, the
+	#per-block variation can't. LOD is drawn from mips of those bakes, so past the handoff what shows
+	#is the texture's density and average colour, and both then agree.
+	#Applies as block states are first baked - already-baked LOD models keep the old scale until Voxy's
+	#model cache is rebuilt. Does nothing while Big Water is idle (no pack active and its scale at 1).
+	matchFluidTextureScale = true
+
+#Voxy x Atmospherics compatibility
+[voxy_atmospherics]
+	#Move Atmospherics' fog end out to Voxy's LOD horizon instead of letting it close inside the
+	#vanilla render distance. Atmospherics fogs to full opacity at a fixed block distance (150 by
+	#default), but Voxy's LOD terrain renders with no fog at all - so distant LOD stays crisp and fully
+	#lit right behind a wall of fog. Pushing the end out leaves the fog near zero where the unfogged
+	#LOD takes over, which is what that handoff needs to blend. Atmospherics' own fog START is left
+	#alone, so fog still builds from near the camera. Off = use Atmospherics' distances unchanged.
+	matchFogDistance = true
+	#Where the fog closes, as a percent of the LOD EDGE - where terrain actually runs out (the distant-
+	#gen radius, ~1536 blocks by default), NOT the render distance. 100 = fog solid exactly at the
+	#edge: the normal chunks, the seam and the LOD all sit on one continuous curve that hides the world
+	#edge with no kink at the handoff. Lower closes the fog before the edge - denser fog on the normal
+	#chunks and a smoother seam, trading away some visible LOD. The fog is linear, so this really sets
+	#how much haze the near view carries: 100 is the lightest that still covers the edge, 60-70 gives
+	#obvious near fog. Never pulls the fog closer than Atmospherics asked for.
+	# Default: 75
+	# Range: 10 ~ 200
+	fogDistancePercent = 55
+	#Use Atmospherics' SKY colour for the fog as well, instead of its separate fog colour. Terrain
+	#that has fully faded out is exactly the fog colour, so it only really disappears if the sky
+	#behind it is that colour too - vanilla derives its fog colour from the sky and Better Fog
+	#repaints the sky to match its fog, which is why neither ever shows a hard rim where terrain runs
+	#out. Atmospherics sets fog colour and sky colour independently, so when they differ the far edge
+	#of Voxy's LOD reads as a disc of fog colour cut out of a different sky, and adding more fog only
+	#makes that disc more solid.
+	#This recolours the fog everywhere - near ring and LOD alike - so they cannot disagree. Doing it
+	#for the distant terrain only would swap the rim at the horizon for a colour break at the
+	#render-distance handoff, which is worse and more obvious. Where a biome already has both colours
+	#set the same (Atmospherics' defaults do) this changes nothing.
+	fogColourFromSky = true
+
+#Better Fog x Atmospherics compatibility
+[betterfog_atmospherics]
+	#Let Atmospherics own the fog COLOUR and stop Better Fog from writing it. Both mods set the fog
+	#colour - Better Fog from the ComputeFogColor event and again during its render-stage tick,
+	#Atmospherics from its own per-biome settings - so whichever lands last wins and you get a colour
+	#neither mod configured. With this on, Atmospherics' per-biome colours apply cleanly and Better Fog
+	#still controls the fog's distance, density and shape. Off = both mods write the colour (Better
+	#Fog's own behaviour). Only does anything when BOTH mods are installed.
+	atmosphericsOwnsFogColour = true
+	#Let Better Fog own the fog's DISTANCE and stop Atmospherics from setting it. Pairs with the
+	#option above to split the job down the middle: Better Fog drives everything distance-shaped -
+	#where the fog starts and closes, its density curve and shape, its cave/void/water/lava handling -
+	#and Atmospherics drives the colour. Each mod does the half it is better at instead of the two
+	#overwriting each other's uniforms.
+	#Without this, Atmospherics wins the distance purely by ordering: Better Fog sets its distances
+	#from the RenderFog event fired inside FogRenderer.setupFog, and Atmospherics writes its own from
+	#an injection at that same method's tail, which runs afterwards. Off = Atmospherics sets the fog
+	#distance as well (and wins). Only does anything when BOTH mods are installed.
+	betterFogOwnsFogDistance = true
+
+#Voxy LOD fog
+[voxy_lod_fog]
+	#Render fog on Voxy's LOD terrain. Voxy's LOD is drawn unfogged - its blit shader has a fog step,
+	#but Voxy hands it an all-zero fog colour, so the step never runs. That is why fog from ANY mod
+	#(vanilla, Atmospherics, Better Fog) stops at the vanilla render distance and the LOD behind it
+	#stays crisp and fully lit. With this on, the LOD is fogged by whatever fog the game is currently
+	#using, so distant terrain recedes into it properly. Requires Voxy's own 'use environmental fog'
+	#option to be on (it is by default) - the uniforms this fills in only exist when it is.
+	renderFogOnLod = true
+	#How strongly the fog tints LOD terrain, as a percent. 100 = the same fog the vanilla terrain in
+	#front of it gets, so the two match seamlessly; lower keeps distant LOD clearer than the fog says
+	#it should be, which trades a little realism for seeing further. Pair with the fog-distance
+	#options above: those decide WHERE the fog closes, this decides how opaque it gets on the LOD.
+	# Default: 100
+	# Range: 0 ~ 100
+	fogStrength = 100
+	#Give the LOD its OWN fog curve that closes at the world edge, instead of reusing the same curve as
+	#the normal chunks. OFF by default, and usually best left off. The idea was to let the near view
+	#stay clear while still fogging the far LOD edge, but because that second curve is pinned to the
+	#render-distance handoff it has a high floor: LOD that appears close to the player - which happens
+	#whenever the normal chunks around you haven't finished loading - comes out far too foggy. With
+	#this off, the LOD uses exactly the same fog as the normal chunks, so a near LOD chunk looks like
+	#near terrain whether or not its normal chunk has loaded, and the fog-distance percent alone
+	#decides where everything closes. Leave off unless you specifically want the separate far-edge
+	#fade and always keep your normal chunks loaded.
+	fadeAtWorldEdge = false
