@@ -53,7 +53,6 @@ def collect_files(pack_root: Path, base_url: str) -> list[dict[str, str]]:
 
             relative = file_path.relative_to(pack_root).as_posix()
             
-            # Пропускаем modrinth.index.json, если он находится в pack_root
             if relative == "modrinth.index.json":
                 continue
 
@@ -102,18 +101,6 @@ def save_known_paths(state_path: Path, known_paths: set[str]) -> None:
     )
 
 
-def load_resource_packs_to_remove(file_path: Path) -> list[str]:
-    if not file_path.is_file():
-        return []
-    
-    resource_packs = []
-    with file_path.open("r", encoding="utf-8") as f:
-        for line in f:
-            line = line.strip()
-            if line and not line.startswith("#"):
-                resource_packs.append(line)
-    return resource_packs
-
 def load_mods_to_remove(file_path: Path) -> list[str]:
     if not file_path.is_file():
         return []
@@ -125,6 +112,7 @@ def load_mods_to_remove(file_path: Path) -> list[str]:
             if line and not line.startswith("#"):
                 mods.append(line)
     return mods
+
 
 def load_modrinth(modrinth_path: Path) -> list[dict[str, str]]:
     if not modrinth_path.is_file():
@@ -138,8 +126,8 @@ def load_modrinth(modrinth_path: Path) -> list[dict[str, str]]:
         for file_data in index.get("files", []):
             path_str = file_data.get("path", "")
             
-            # Игнорируем отключенные моды (.disabled)
-            if path_str.endswith(".disabled"):
+            # Feature: Skip disabled files OR any file not strictly in the 'mods/' directory
+            if path_str.endswith(".disabled") or not path_str.startswith("mods/"):
                 continue
 
             files.append({
@@ -171,7 +159,6 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--version-id", default="packpulse-pack", help="Version id")
     parser.add_argument("--profile-name", default="PackPulse Pack", help="Profile name")
     parser.add_argument("--mods-to-remove", default=None, help="Path to a .txt file listing mod IDs to remove")
-    parser.add_argument("--resource-packs-to-remove", default=None, help="Path to a .txt file listing resource pack IDs to remove")
     return parser.parse_args()
 
 
@@ -189,19 +176,19 @@ def main() -> None:
     final_files = []
     seen_paths = set()
 
-    # 1. Локальные файлы (приоритет 1)
+    # 1. Local files
     local_files = collect_files(pack_root, args.base_url)
     for file_obj in local_files:
         final_files.append(file_obj)
         seen_paths.add(file_obj["path"])
 
-    # 2. Статичные моды (приоритет 2)
+    # 2. Static mods
     for sm in STATIC_MODS:
         if sm["path"] not in seen_paths:
             final_files.append(sm)
             seen_paths.add(sm["path"])
 
-    # 3. Modrinth (приоритет 3 - с фильтрацией дублей и .disabled файлов)
+    # 3. Modrinth
     modrinth_files = load_modrinth(modrinth_path)
     for mf in modrinth_files:
         if mf["path"] not in seen_paths:
@@ -219,11 +206,6 @@ def main() -> None:
         mods_to_remove_path = Path(args.mods_to_remove).resolve()
         mods_to_remove_list = load_mods_to_remove(mods_to_remove_path)
 
-    resource_packs_to_remove_list = []
-    if args.resource_packs_to_remove:
-        resource_packs_to_remove_path = Path(args.resource_packs_to_remove).resolve()
-        resource_packs_to_remove_list = load_resource_packs_to_remove(resource_packs_to_remove_path)
-
     manifest = {
         "name": args.name,
         "version": args.version,
@@ -235,7 +217,6 @@ def main() -> None:
         "files": final_files,
         "delete": delete_paths,
         "modsToRemove": mods_to_remove_list,
-        "resourcePacksToRemove": resource_packs_to_remove_list,
     }
 
     with output_path.open("w", encoding="utf-8") as stream:
@@ -246,64 +227,6 @@ def main() -> None:
     print(f"Total files in manifest: {len(final_files)}")
     print(f"Files marked for delete: {len(delete_paths)}")
     print(f"Mods marked for selective removal: {len(mods_to_remove_list)}")
-    print(f"Resource packs marked for selective removal: {len(resource_packs_to_remove_list)}")
-    args = parse_args()
-
-    pack_root = Path(args.pack_root).resolve()
-    output_path = Path(args.output).resolve()
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    
-    modrinth_path = Path(args.modrinth).resolve()
-    if not modrinth_path.is_file():
-        modrinth_path = Path.cwd() / "modrinth.index.json"
-
-    final_files = []
-    seen_paths = set()
-
-    # 1. Локальные файлы (приоритет 1)
-    local_files = collect_files(pack_root, args.base_url)
-    for file_obj in local_files:
-        final_files.append(file_obj)
-        seen_paths.add(file_obj["path"])
-
-    # 2. Статичные моды (приоритет 2)
-    for sm in STATIC_MODS:
-        if sm["path"] not in seen_paths:
-            final_files.append(sm)
-            seen_paths.add(sm["path"])
-
-    # 3. Modrinth (приоритет 3 - с фильтрацией дублей и .disabled файлов)
-    modrinth_files = load_modrinth(modrinth_path)
-    for mf in modrinth_files:
-        if mf["path"] not in seen_paths:
-            final_files.append(mf)
-            seen_paths.add(mf["path"])
-
-    current_paths = {item["path"] for item in final_files}
-    state_path = output_path.parent / STATE_FILE_NAME
-    known_paths = load_known_paths(state_path)
-    delete_paths = sorted(known_paths - current_paths)
-    save_known_paths(state_path, known_paths | current_paths)
-
-    manifest = {
-        "name": args.name,
-        "version": args.version,
-        "minecraftVersion": args.minecraft_version,
-        "loader": args.loader,
-        "neoForgeVersion": args.neoforge_version,
-        "versionId": args.version_id,
-        "profileName": args.profile_name,
-        "files": final_files,
-        "delete": delete_paths,
-    }
-
-    with output_path.open("w", encoding="utf-8") as stream:
-        json.dump(manifest, stream, indent=2, ensure_ascii=False)
-        stream.write("\n")
-
-    print(f"Manifest generated: {output_path}")
-    print(f"Total files in manifest: {len(final_files)}")
-    print(f"Files marked for delete: {len(delete_paths)}")
 
 
 if __name__ == "__main__":

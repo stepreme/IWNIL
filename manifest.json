@@ -1,6 +1,6 @@
 {
   "name": "PackPulse Pack",
-  "version": "2026.08.24-200547",
+  "version": "2026.08.25-132401",
   "minecraftVersion": "1.21.1",
   "loader": "neoforge",
   "neoForgeVersion": "21.1.228",
@@ -60,7 +60,7 @@
     {
       "path": "mods/PackPulseMod-neoforge-1.21-1.0.1.jar",
       "url": "https://raw.githubusercontent.com/stepreme/IWNIL/main/opt/packpulse/server-pack/mods/PackPulseMod-neoforge-1.21-1.0.1.jar",
-      "sha512": "b7ec0b93d8aa99d1bbb8613125e6171df94f8e66c3421adef21be849f63e88efcdb41a1933c711aa56709d9308c4d6b3497540692e01eba898b9e149823d2e8a"
+      "sha512": "c825efbfb8784763804a3bf32e38e15577290a8415a5b20a730d58282ac7f7078b6b7868c665a1deac78ff42948e36440230301bd1ccfb4a7bcfef1ce79f7940"
     },
     {
       "path": "mods/alexscaves-2.0.2.jar",
@@ -151,11 +151,6 @@
       "path": "mods/smoothmovement-1.21.1-2.7.jar",
       "url": "https://raw.githubusercontent.com/stepreme/IWNIL/main/opt/packpulse/server-pack/mods/smoothmovement-1.21.1-2.7.jar",
       "sha512": "8a64e80f5faefc060c5e15e0f45a2fb75a668e79f5773e252a568c38d22ce5e2ec0e7158c6cb606f3e9a6af5079071ec9472af17a3f4bef3627177c3d26a15ae"
-    },
-    {
-      "path": "mods/snassets-1.0.1.jar",
-      "url": "https://raw.githubusercontent.com/stepreme/IWNIL/main/opt/packpulse/server-pack/mods/snassets-1.0.1.jar",
-      "sha512": "428f4c791b50a475e3d2c103fbb117876d32b4f819b714e09c06df41d26510125de1b51d31ec1566d398bbd160f0bc5f2396582bc7e6bbab2606eed39702f743"
     },
     {
       "path": "mods/st_gsoc-1.21.1-3.0.jar",
@@ -768,6 +763,11 @@
       "sha512": "aaf9b010955b8cd294e5a92f069985b18729fd5e2cf22d351f1dff9680f15488688803ec41e77e941cbde130ceb535014ca4c868047d80ab69c2d508e216654d"
     },
     {
+      "path": "mods/clutternomore-2.0.7+1.21.1-neoforge.jar",
+      "url": "https://cdn.modrinth.com/data/ewyjbmG4/versions/EaL0l4U1/clutternomore-2.0.7%2B1.21.1-neoforge.jar",
+      "sha512": "392e17d4fdfd6dc0fc3ea9545c66bb536813f2b8081dbbbf3d4125c49b9bcb64ce666d1c69409ab26f8d5b3d14c7f6c483f6d3c4015fc075a1f6a09c1cf90327"
+    },
+    {
       "path": "mods/cobweb-neoforge-1.21-1.4.0.jar",
       "url": "https://cdn.modrinth.com/data/dQcfqGbl/versions/c10AZba0/cobweb-neoforge-1.21-1.4.0.jar",
       "sha512": "0d258ce908e6c337bfc66452c90037e4dfe871f77da32297a108b7a9ef94d178007b1f66fa1dfda4d3e68e31755ae19636f15098da6ccfc25b2a46b4bf092248"
@@ -1096,6 +1096,11 @@
       "path": "mods/fast-ip-ping-v1.0.11-mc1.21.1-neoforge.jar",
       "url": "https://cdn.modrinth.com/data/9mtu0sUO/versions/gRe07TZL/fast-ip-ping-v1.0.11-mc1.21.1-neoforge.jar",
       "sha512": "aaaf3c1494e240aa61d5191521cf324aab82a3d08c0a5dfa1db516bb26a6b165639b98fc8e9946bd65ad5048ecb6b96601d9febbd1d536f8e1ed5b72c741461f"
+    },
+    {
+      "path": "mods/featurify-neoforge-2.0.6+mc1.21.1.jar",
+      "url": "https://cdn.modrinth.com/data/BXeGCdww/versions/ExDXGVF2/featurify-neoforge-2.0.6%2Bmc1.21.1.jar",
+      "sha512": "678b0bfbb429b253a2821ccd0371e8230355abee7f14a90fc40baf1fa26de2daed293493701b903af8d86e935893810f9726d39455b47bb47e2244319f40ad99"
     },
     {
       "path": "mods/ferritecore-7.0.3-neoforge.jar",
@@ -1748,9 +1753,9 @@
       "sha512": "b96bd6146344a86e4ad45fd4c274a15f0e146bcc13747940f8b9f0ea21c8ea8bca4d005444f2bf8082f29ec7ad1ce03507764ddfbdda64ac9284d8ac400b44c5"
     },
     {
-      "path": "mods/waystones-neoforge-1.21.1-21.1.39.jar",
-      "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/9lyx0L72/waystones-neoforge-1.21.1-21.1.39.jar",
-      "sha512": "88b7a36c45bf0e78412148bf8d0c7ce171ae48c7740969dc6f2728fbb5185b1c37ae69bbb4167109c7927d5a564e9f154d8293dd93bfc21809bff6dd25db9569"
+      "path": "mods/waystones-neoforge-1.21.1-21.1.41.jar",
+      "url": "https://cdn.modrinth.com/data/LOpKHB2A/versions/fxszxKRW/waystones-neoforge-1.21.1-21.1.41.jar",
+      "sha512": "18a11f82b77ba520c5871f9815f008b3e1ad11af16fa8498167091c34a33be5d0aa9b2761eef8cefac2e22d67da32a76fb2e01fd3d3248e3f0cfc2c139603d37"
     },
     {
       "path": "mods/windswept-1.21.1-4.0.1.jar",
@@ -1781,181 +1786,6 @@
       "path": "mods/zfastnoise-1.0.13+1.21.1+neoforge.jar",
       "url": "https://cdn.modrinth.com/data/OnlVIpq5/versions/9vSFkDAr/zfastnoise-1.0.13%2B1.21.1%2Bneoforge.jar",
       "sha512": "23c50dc3d75da96d87b065381e32a979528017f872d056bf1cb012e085122734ab218ea8af7b5570403d83c88ebfb53296969af47198fdb637058753d3974278"
-    },
-    {
-      "path": "resourcepacks/Authentic Shadows_1.21+.zip",
-      "url": "https://cdn.modrinth.com/data/kWgq7eAt/versions/2g7fYcvg/Authentic%20Shadows_1.21%2B.zip",
-      "sha512": "73272db0fade4e5cb1c63a7f813c4b2ec754432de88e1930c556732e0668314ed722be9e162e9284741f1b862743a3f64cc68bb972f2e64625741595dbfdd5e9"
-    },
-    {
-      "path": "resourcepacks/Benigamer'enhanced visuals 1.9.zip",
-      "url": "https://cdn.modrinth.com/data/6C4jPUyq/versions/aLMWRdcC/Benigamer%27enhanced%20visuals%201.9.zip",
-      "sha512": "fcbcd66fa8514ff111716a75e62fb8b018e650b08f207c47fce88d7d1ce6863d6030ae70dc9cec7c1dd8eb9212e52b292beb0b22f7721f3bd97bd5fff7f4339a"
-    },
-    {
-      "path": "resourcepacks/CWOC - Feed The Machine.zip",
-      "url": "https://cdn.modrinth.com/data/rJwiAJYU/versions/OmhQMWnB/CWOC%20-%20Feed%20The%20Machine.zip",
-      "sha512": "85aa01d17ded0df3f83e3790e9e23b087d7e1e5baed4f3a3e0d9ad6193e88a291642ad05c507718c9076d8cb6fb8d373cc3965dee8b56e6b0be0831fa69b2157"
-    },
-    {
-      "path": "resourcepacks/Create World of Color.zip",
-      "url": "https://cdn.modrinth.com/data/DX25XG2W/versions/sfngOzPM/Create%20World%20of%20Color.zip",
-      "sha512": "4250fbf8e9768eb8172da0d40459c6d4b694b2009f570fe961a4216bf5b36e346c28cb7f1f6f92b3a466a463688d66788acb2753803d8982cb933f10828cd56c"
-    },
-    {
-      "path": "resourcepacks/CreateSophBackpacks.zip",
-      "url": "https://cdn.modrinth.com/data/srJbhHkf/versions/3WMwR0Mh/CreateSophBackpacks.zip",
-      "sha512": "766e3c68aff4bec310daa52f0b0800923c8171b7960f509c7f3fe8dbf8de0375e73bd4a4e5ea2b4ba9cdc77279f4d5ccbc6d3163218aa329052d42e92f0a025c"
-    },
-    {
-      "path": "resourcepacks/Ender_Dragon_Reborn-1.0.zip",
-      "url": "https://cdn.modrinth.com/data/W7Jn0Lba/versions/h5yLTjGr/Ender_Dragon_Reborn-1.0.zip",
-      "sha512": "a57b2f8699d23702926daaf21041ff07cd3837667cbf1d1d6f28cd211a541d20695072d0f21c604bdbf6bd02b03866b5902efeaa765fcb047e2a3631fc84d65b"
-    },
-    {
-      "path": "resourcepacks/FA+Player-v1.1.zip",
-      "url": "https://cdn.modrinth.com/data/TAIMVZCL/versions/Wj7NeGjP/FA%2BPlayer-v1.1.zip",
-      "sha512": "d2a5c46ae53e4bb6355604a1ade253ab49f1deb205f5ee69085014965241d3c9623204951ab174a5dbdaf24d9b25ecae9a1638cc6a13d780b398a6d70d157a4e"
-    },
-    {
-      "path": "resourcepacks/Farcrs Better Dirt - Modded Compat.zip",
-      "url": "https://cdn.modrinth.com/data/JdCxKRxl/versions/NHp5U1ki/Farcrs%20Better%20Dirt%20-%20Modded%20Compat.zip",
-      "sha512": "b66ab00593591bff9d2ae56da91156b9a53182cb773bd7371067dff95e5a1fdf192c378549b0e6b85c7f13fc86d565c9069a7ac8148a4a89d76b910963b90594"
-    },
-    {
-      "path": "resourcepacks/Fresh Patch - Jaden's Nether Expansion.zip",
-      "url": "https://cdn.modrinth.com/data/LdIgEVk0/versions/24hnumdJ/Fresh%20Patch%20-%20Jaden%27s%20Nether%20Expansion.zip",
-      "sha512": "22c380bed1ed092922e78b299df623b8d7a9882c3930bcb839d1c3233beb908e55eb8196fa0ab2bb9e9729918c14a175b180c61cb69cb3a9169b58e86a07d1e6"
-    },
-    {
-      "path": "resourcepacks/Fresh mowzie mobs v. 1.2.1.zip",
-      "url": "https://cdn.modrinth.com/data/kFlFkZFc/versions/TZPofKdL/Fresh%20mowzie%20mobs%20v.%201.2.1.zip",
-      "sha512": "01fce1b28b235e4997197a894f94a31a207ca7fa1171088a5fce0ec0c07ce34f711a12ba18955e89fbdad01e15d3819ae732f162e91e14ad75b0dd8e31ca0d9e"
-    },
-    {
-      "path": "resourcepacks/FreshAnimations_v1.10.4.zip",
-      "url": "https://cdn.modrinth.com/data/50dA9Sha/versions/xN57JJts/FreshAnimations_v1.10.4.zip",
-      "sha512": "41258f9bea1a773d823f9a014d0c08206e9e7b339bc538e1538211fff28fadd06878a836d292cbb636ed6829cd2801a509368ae3eb3ad4bedf42190a0d5f7a90"
-    },
-    {
-      "path": "resourcepacks/FreshCompats_v1.6.zip",
-      "url": "https://cdn.modrinth.com/data/nOD7MgEz/versions/EHQK5l1g/FreshCompats_v1.6.zip",
-      "sha512": "1396e1a640d6cc8012fab758d98e2ffb5ce0eb88b64c506af0d9edb3880da9257ae1ce38c0f22f6e8b5e1490f8b20851ea5b315c67f8df60ca8e3eb6f54875d3"
-    },
-    {
-      "path": "resourcepacks/Freshly Modded 3.0.2.zip",
-      "url": "https://cdn.modrinth.com/data/u4nhiAdP/versions/h4Cret6t/Freshly%20Modded%203.0.2.zip",
-      "sha512": "d5afca02ae0c6214b3999b3665ecc9c9e3fbb4d827b2076994c656e8051a671b9c3386fb47e79f34739b844e314458afe35bebf1cc7fa126a4fddf30d5c16942"
-    },
-    {
-      "path": "resourcepacks/ISS Reimagined v1.7.4 for NeoForge.zip",
-      "url": "https://cdn.modrinth.com/data/aCgf1Gyy/versions/inQvAOAj/ISS%20Reimagined%20v1.7.4%20for%20NeoForge.zip",
-      "sha512": "4fd440b7b7894c4605c272e8d00853721fa0007c730eef2d1126688505ebdfeecbca554ec4921d07067c3ce441b9e03ed4a5a546bc164e7187f4242455afb1d2"
-    },
-    {
-      "path": "resourcepacks/Iron's Spells AR v0.1.zip",
-      "url": "https://cdn.modrinth.com/data/b4s7CuW7/versions/vu7Ro3wX/Iron%27s%20Spells%20AR%20v0.1.zip",
-      "sha512": "8eaaae7bead6d41971b6f601f419c22f612aab0415701576180a0103af34972ddb24cf08ffbfc3513c9e16496b2476ada9056bd2b6655f51b73925dc0d34ea02"
-    },
-    {
-      "path": "resourcepacks/Modded Swords x Punchy! 1.0 forge.zip",
-      "url": "https://cdn.modrinth.com/data/bWFMjFo8/versions/nxY5X0Wi/Modded%20Swords%20x%20Punchy%21%201.0%20forge.zip",
-      "sha512": "eef2f056ff0e46c241ea8df1ef062bb2e88def5b97ff36cf3e8402e3f3b8d88ed39ce7cb477fb4939c37883448da3eee824da9c034903c94b88c60a73631a50a"
-    },
-    {
-      "path": "resourcepacks/Modded Swords x Punchy! 1.21.1 v1.3.2.zip",
-      "url": "https://cdn.modrinth.com/data/dJ0eaUH6/versions/TX7amOa7/Modded%20Swords%20x%20Punchy%21%201.21.1%20v1.3.2.zip",
-      "sha512": "8293de4cded7175321076f0fa9be9610649d2d9edc103bed800ab1e52efa5ba61923a5a05b98a4b9af3a3b70a458514931181139cca8d5a9eb20c2a904111287"
-    },
-    {
-      "path": "resourcepacks/Rus-For-Mods-1.21-1.1.zip",
-      "url": "https://cdn.modrinth.com/data/GsoCvyCO/versions/hQjgTGgA/Rus-For-Mods-1.21-1.1.zip",
-      "sha512": "c3995d4d4b6e225e995af040304c2aa09d7daf9da36efb99610e6a90686bfbd9fb25d43fce9895322df98d58c0b19528475bd9ad36835bfc1b79554ae2e79bc5"
-    },
-    {
-      "path": "resourcepacks/Russian_Translation_Pack_v1.0.0.zip",
-      "url": "https://cdn.modrinth.com/data/hste0jyM/versions/Npz7wHMB/Russian_Translation_Pack_v1.0.0.zip",
-      "sha512": "fc75ba5c802f9897a4bbc3ade785e05719969ac4c2872f1fcb61cf9bf475927edc719458e12bd769aba708fa08d3c27f42c26ebe162120f9dfd9ceb20ef2de46"
-    },
-    {
-      "path": "resourcepacks/Sharpened Textures.zip",
-      "url": "https://cdn.modrinth.com/data/9XoFpbEu/versions/pMmm8nNU/Sharpened%20Textures.zip",
-      "sha512": "dc82cc4c93cfe7a25ef55a0375873ef5489d776b5607bdcd0060f49d605302e45555907b40081e9fddcd64ba0acb5c1119cc773e6c0720ed1eb617fdf15b21cd"
-    },
-    {
-      "path": "resourcepacks/Simple Create Radios V2.01.zip",
-      "url": "https://cdn.modrinth.com/data/FeyRzQr8/versions/9UeChR5k/Simple%20Create%20Radios%20V2.01.zip",
-      "sha512": "7f73207c26ffe3f3a6502a3d8de500ce904610773e4d963b6e8d52885559b2c655e9beacf20a678f2a003fab2072d3ff9b20666c3f91ce099e5b08acfac612d9"
-    },
-    {
-      "path": "resourcepacks/Supplementaries Touch-Ups v0.2.zip",
-      "url": "https://cdn.modrinth.com/data/RmW2nLUP/versions/NcHFuN48/Supplementaries%20Touch-Ups%20v0.2.zip",
-      "sha512": "27bdef0f6069d7a3fe2aad93e5bf9d4d7e259a78e7a440c76d95f712d4b8aa7d821f6898df373e22f77735b37012e6ec7e5c9c54f9f21ff99845ac4fcd4eecfd"
-    },
-    {
-      "path": "resourcepacks/True Dovah.zip",
-      "url": "https://cdn.modrinth.com/data/1ttTrrTr/versions/Gt5qv6bZ/True%20Dovah.zip",
-      "sha512": "fa5e8cbcc5be8545884407ee36be200934230bc843f7231cef65ed6b7b445648f890a9890d00840c69940827ff9747fe3622a0827de6516cc5b71da30bf2ae09"
-    },
-    {
-      "path": "resourcepacks/cubic-sun-moon-v1.8.5.zip",
-      "url": "https://cdn.modrinth.com/data/g4bSYbrU/versions/zHa4qeKn/cubic-sun-moon-v1.8.5.zip",
-      "sha512": "6136c94c0c1ba8251a378f791cdca1cdce021fc486c50f4d1c928769e361dd9dadfc6267a2a06c902bd9509136a99fa24ffa88f84395869b889c2257124929af"
-    },
-    {
-      "path": "resourcepacks/fresh_waystones.zip",
-      "url": "https://cdn.modrinth.com/data/BcyGAwlg/versions/LvhBQERi/fresh_waystones.zip",
-      "sha512": "e2d369d751ce923bd13147a500989200be915bc5bfd40ccf1ce9dd907a6efc1a8fe500e0915964b3550a6eba126b436a4cda3f442ae0bf6df63e9b2badac3239"
-    },
-    {
-      "path": "resourcepacks/presence footsteps (modded).zip",
-      "url": "https://cdn.modrinth.com/data/pYSXM5rm/versions/LIwW0p6Z/presence%20footsteps%20%28modded%29.zip",
-      "sha512": "5f2927228ae28d3092c3b6fcfca9d64cea9b20912d09a6059077a23a7bc46d185a96948f03b2bd2816cd43620b9d751babaffc18057cf37805155bad7a38039f"
-    },
-    {
-      "path": "resourcepacks/presense_footers_compat.zip",
-      "url": "https://cdn.modrinth.com/data/xcqUJ0yz/versions/k36MISOR/presense_footers_compat.zip",
-      "sha512": "1a33a04b20e5fe03824e087f68928b45ee7e0660de58629ed2152ec62f1c7bf37a4c9bdd8d78e64e2ede5c841d17d3e65e1a146439674eb4725a5d5f9dcaa425"
-    },
-    {
-      "path": "resourcepacks/sweety_items_21.zip",
-      "url": "https://cdn.modrinth.com/data/HS1rrq2d/versions/w7XMOyPK/sweety_items_21.zip",
-      "sha512": "bec32a3ae8ae7fdc9e61bef8e6962470b9f56d429ea87d0b3aa502bc0dd48420beb307fc252547745c901411f0a2ee3f59e5916d553c341a0f0d082fe92be8d4"
-    },
-    {
-      "path": "resourcepacks/waystones_dye_depot_compat_1.0.zip",
-      "url": "https://cdn.modrinth.com/data/v6qcHb4u/versions/qxLszpW1/waystones_dye_depot_compat_1.0.zip",
-      "sha512": "67c7e9f7d15e02b7e92f14a6130a643e182618f4028e1ee6c674504abcdbb2d6b95b8a500529ca9b34cb2cf0dc948e4859f2e1256924d2f4f84d6390c3bf9588"
-    },
-    {
-      "path": "resourcepacks/§6Immersive§8_§6Interfaces§8.zip",
-      "url": "https://cdn.modrinth.com/data/3sV1gvyJ/versions/rhXvPOmr/%C2%A76Immersive%C2%A78_%C2%A76Interfaces%C2%A78.zip",
-      "sha512": "a8eb22e41c2aa1c72517240b7f1d5ca2640542b5782a794d1068eba5d6189356548e3aadba293d5e570d5ab04f465161c8123efdb34f4a9d11b9f7493c1c5eab"
-    },
-    {
-      "path": "resourcepacks/§6Immersive§8_§6Interfaces§8_§6Modded§8.zip",
-      "url": "https://cdn.modrinth.com/data/zW0OkthM/versions/6QMG8r6x/%C2%A76Immersive%C2%A78_%C2%A76Interfaces%C2%A78_%C2%A76Modded%C2%A78.zip",
-      "sha512": "b8f606a9eccf5864d99e1e0d2a1cabab44dcbe52047f8f92e63dda87ebe0aa3cc2ef1df987ea1e5c1cab8227985efb4443c8a0f4b60d99a3966f2353701c023f"
-    },
-    {
-      "path": "shaderpacks/Bliss_v2.1.2_(Chocapic13_Shaders_edit).zip",
-      "url": "https://cdn.modrinth.com/data/ZvMtQlho/versions/kC2Y8q1P/Bliss_v2.1.2_%28Chocapic13_Shaders_edit%29.zip",
-      "sha512": "dafc60be4980ec40f40edc0f2625cb0976f3c9ce5ed86383146a120480826bb1de70ef5e38b7f1437294ed4d38c6ef3c82ebef0ae4e00b8cee165788c9c18280"
-    },
-    {
-      "path": "shaderpacks/ComplementaryReimagined_r5.8.1.zip",
-      "url": "https://cdn.modrinth.com/data/HVnmMxH1/versions/yCCduG44/ComplementaryReimagined_r5.8.1.zip",
-      "sha512": "6bd95215755d25812556ce790d976221f7d677d63112e3e4d3e70b08a62ed41348fa3792dd31bbe720d1e46fe2d525cadb4f66e6358118e1f4aa8e0d11f25c39"
-    },
-    {
-      "path": "shaderpacks/I Like Vanilla v1.3.4b.zip",
-      "url": "https://cdn.modrinth.com/data/DoODk4HD/versions/EIkZTonC/I%20Like%20Vanilla%20v1.3.4b.zip",
-      "sha512": "03c75eca94e9b701b2bd63564303fd740abd8bf760c843c795b69c96f74b8f4b3068c80352de64eba54dd06d701b694bacd6d83161a229678e914548a75a5366"
-    },
-    {
-      "path": "shaderpacks/miniature-shader-2.18.13.zip",
-      "url": "https://cdn.modrinth.com/data/UaS8ROxa/versions/ErR6TZYu/miniature-shader-2.18.13.zip",
-      "sha512": "2da9cc48b911e0711f432a1a1203a9f3d813c12e703aeae0dcf617bcab471f84c5ffd19a29bf5b7b6760f6d16100a5c47e38a1980f5c0dd2b3f7d5d120053128"
     }
   ],
   "delete": [
@@ -2011,6 +1841,7 @@
     "mods/rolling-tones-0.1.0.jar",
     "mods/sable-neoforge-1.21.1-2.0.3.jar",
     "mods/sablejade-1.2.1.jar",
+    "mods/snassets-1.0.1.jar",
     "mods/sodium-neoforge-0.8.13-beta.1+mc1.21.1.jar",
     "mods/sound-physics-aeronautics-1.2.1.jar",
     "mods/structurify-neoforge-2.0.30+mc1.21.1.jar",
@@ -2021,9 +1852,49 @@
     "mods/vista-neoforge-1.21.1-5.2.5.jar",
     "mods/voicechat-neoforge-1.21.1-2.6.21.jar",
     "mods/wakes-1.21.1-NeoForge-1.3.6.jar",
+    "mods/waystones-neoforge-1.21.1-21.1.39.jar",
     "mods/windswept-1.21.1-4.0.0.jar",
     "mods/xaeroworldmap-neoforge-1.21.1-1.44.2.jar",
+    "resourcepacks/Authentic Shadows_1.21+.zip",
+    "resourcepacks/Benigamer'enhanced visuals 1.9.zip",
+    "resourcepacks/CWOC - Feed The Machine.zip",
+    "resourcepacks/Create World of Color.zip",
+    "resourcepacks/CreateSophBackpacks.zip",
+    "resourcepacks/Ender_Dragon_Reborn-1.0.zip",
+    "resourcepacks/FA+Player-v1.1.zip",
+    "resourcepacks/Farcrs Better Dirt - Modded Compat.zip",
+    "resourcepacks/Fresh Patch - Jaden's Nether Expansion.zip",
+    "resourcepacks/Fresh mowzie mobs v. 1.2.1.zip",
+    "resourcepacks/FreshAnimations_v1.10.4.zip",
+    "resourcepacks/FreshCompats_v1.6.zip",
+    "resourcepacks/Freshly Modded 3.0.2.zip",
+    "resourcepacks/ISS Reimagined v1.7.4 for NeoForge.zip",
+    "resourcepacks/Iron's Spells AR v0.1.zip",
+    "resourcepacks/Modded Swords x Punchy! 1.0 forge.zip",
+    "resourcepacks/Modded Swords x Punchy! 1.21.1 v1.3.2.zip",
+    "resourcepacks/Rus-For-Mods-1.21-1.1.zip",
+    "resourcepacks/Russian_Translation_Pack_v1.0.0.zip",
+    "resourcepacks/Sharpened Textures.zip",
+    "resourcepacks/Simple Create Radios V2.01.zip",
+    "resourcepacks/Supplementaries Touch-Ups v0.2.zip",
     "resourcepacks/Translate-for-IWNIL-1.zip",
-    "resourcepacks/Vintage.zip"
+    "resourcepacks/True Dovah.zip",
+    "resourcepacks/Vintage.zip",
+    "resourcepacks/cubic-sun-moon-v1.8.5.zip",
+    "resourcepacks/fresh_waystones.zip",
+    "resourcepacks/presence footsteps (modded).zip",
+    "resourcepacks/presense_footers_compat.zip",
+    "resourcepacks/sweety_items_21.zip",
+    "resourcepacks/waystones_dye_depot_compat_1.0.zip",
+    "resourcepacks/§6Immersive§8_§6Interfaces§8.zip",
+    "resourcepacks/§6Immersive§8_§6Interfaces§8_§6Modded§8.zip",
+    "shaderpacks/Bliss_v2.1.2_(Chocapic13_Shaders_edit).zip",
+    "shaderpacks/ComplementaryReimagined_r5.8.1.zip",
+    "shaderpacks/I Like Vanilla v1.3.4b.zip",
+    "shaderpacks/miniature-shader-2.18.13.zip"
+  ],
+  "modsToRemove": [
+    "bitsandbalance-neoforge-1.21.1-2.2.17.jar",
+    "ice_and_fire_spellbooks-2.3.3-1.21.1.jar"
   ]
 }
