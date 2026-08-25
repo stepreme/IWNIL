@@ -1,6 +1,6 @@
 {
   "name": "PackPulse Pack",
-  "version": "2026.08.25-132401",
+  "version": "2026.08.25-142223",
   "minecraftVersion": "1.21.1",
   "loader": "neoforge",
   "neoForgeVersion": "21.1.228",
@@ -60,7 +60,7 @@
     {
       "path": "mods/PackPulseMod-neoforge-1.21-1.0.1.jar",
       "url": "https://raw.githubusercontent.com/stepreme/IWNIL/main/opt/packpulse/server-pack/mods/PackPulseMod-neoforge-1.21-1.0.1.jar",
-      "sha512": "c825efbfb8784763804a3bf32e38e15577290a8415a5b20a730d58282ac7f7078b6b7868c665a1deac78ff42948e36440230301bd1ccfb4a7bcfef1ce79f7940"
+      "sha512": "1619e9879b092b79f000fb2d8f5981563ab5c4d0921c44285e17076fa96306b70d38a557792892b0e338524d536b0fd1bef8aaf7142bdcfb79a3c908876b4e9d"
     },
     {
       "path": "mods/alexscaves-2.0.2.jar",
